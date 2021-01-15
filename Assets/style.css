@@ -1,0 +1,18 @@
+.Dashboard {
+    background-color: #4a4141;
+    color: white;
+    text-align: Center;
+    }
+
+td, th, table {
+    border: 1px solid black;
+    white-space: nowrap;
+    text-align: left
+    }
+
+.left {
+    background-color: #8080801f;
+    }
+
+
+
