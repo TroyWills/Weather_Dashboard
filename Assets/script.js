@@ -1,6 +1,3 @@
-// API KEY = 39d310963c56645dbc7002332b76e141
-
-
 $("#run-search").on("click", function (event) {
     // event.preventDefault();
     alert('working');
@@ -14,11 +11,6 @@ $.ajax({
     method: "GET",
     }).then(function (response) {
         console.log(response.main.temp);
-//  userCalories.push(response.calories);
-//  localStorage.setItem("userCalories", JSON.stringify(userCalories));
-//  applyTable();
-// });
-
 });
 });
 
