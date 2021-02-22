@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -24,28 +25,12 @@
 
 <form>
     <label for="City Search">
-        <strong>Search for a City:</strong><input type="text"></label></form> 
+        <strong>Search for a City:</strong><input type="text" id = "searcedCity"></label></form> 
         
-        <button type="submit" class = "btn btn-default" id="run-search"
+        <button type="submit" class = "btn btn-default" id="run-search">
         <i class="fa fa-search"></i> Search</button>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type ="text/javascript">
 
-            $("button").on("click", function() {
-            
-            })
-            
-            var queryURL = api.openweathermap.org/data/2.5/forecast?q=" + City Name + "&appid=f5961c12775018e7551fc71579fb47d6"
-            
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-              })
-              .then(function(response) {
-                var results = response.data;
-            
-            </script>
 <br>
 <br>
 
@@ -78,6 +63,7 @@
 
 
 
+<script src="Assets/script.js"></script>
 
 
 
