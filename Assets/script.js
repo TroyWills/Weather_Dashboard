@@ -35,11 +35,11 @@
         var temp = weatherData[i].main.temp;
         var maxTemp = weatherData[i].main.temp_max;
         var minTemp = weatherData[i].main.temp_min;
-        var humidity = weatherData[0].main.humidity;
-        var windSpeed = weatherData[0].wind.speed;
+        var humidity = weatherData[i].main.humidity;
+        var windSpeed = weatherData[i].wind.speed;
         
         var weatherDiv = $("<div>");
-        var ul = $("<ul>").text("Date: " + date);
+        var ul = $("<ul>").text(("Date: " + date) + ("Temperature" + temp));
         $("#weatherHTML").prepend(weatherDiv);
         weatherDiv.append(ul);
     };
