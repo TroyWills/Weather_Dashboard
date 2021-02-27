@@ -39,9 +39,22 @@
         var windSpeed = weatherData[i].wind.speed;
         
         var weatherDiv = $("<div>");
-        var ul = $("<ul>").text(("Date: " + date) + ("Temperature" + temp));
+
+        var dateHTML = $("<ul>").text("Date: " + date);
+        var tempHTML = $("<ul>").text("Temperature: " + temp);
+        // var ul = $("<ul>").text{("Date: " + date);
+        // var ul = $("<ul>").text{("Date: " + date);
+        // var ul = $("<ul>").text{("Date: " + date);
+        // var ul = $("<ul>").text{("Date: " + date);
+
         $("#weatherHTML").prepend(weatherDiv);
-        weatherDiv.append(ul);
+        weatherDiv.append(dateHTML);
+        weatherDiv.append(tempHTML);
+        // weatherDiv.append(ul);
+        // weatherDiv.append(ul);
+        // weatherDiv.append(ul);
+        // weatherDiv.append(ul);
+
     };
     });
 });
