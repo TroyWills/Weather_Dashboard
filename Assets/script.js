@@ -29,51 +29,27 @@
         // console.log(date);
     for (let i = 0; i < weatherData.length; i++) {
 
-        // return date from ajax call  
-        var date = weatherData[0].dt;
-        console.log(date);      
 
-        // return temperature from ajax call 
-        var temp = weatherData[0].main.temp;
-        console.log(temp);
-
-        // return max temp from ajax call 
-        var maxTemp = weatherData[0].main.temp_max;
-        console.log(maxTemp);
-
-        // return low temp from ajax call 
-        var minTemp = weatherData[0].main.temp_min;
-        console.log(minTemp);
-
-        // return humidity from ajax call 
+        // Data pulled out of AJAX call (Date, Temperature, Max Temperature, Min Temperature, Humidity, Wind Speed)
+        var date = weatherData[i].dt;
+        var temp = weatherData[i].main.temp;
+        var maxTemp = weatherData[i].main.temp_max;
+        var minTemp = weatherData[i].main.temp_min;
         var humidity = weatherData[0].main.humidity;
-        console.log(humidity);
-
-        // return wind speed from ajax call
         var windSpeed = weatherData[0].wind.speed;
-        console.log(windSpeed);
-
-        }
+        
+        var weatherDiv = $("<div>");
+        var ul = $("<ul>").text("Date: " + date);
+        $("#weatherHTML").prepend(weatherDiv);
+        weatherDiv.append(ul);
+    };
     });
 });
 
 
-    
-
-// var apiKey = "39d310963c56645dbc7002332b76e141";
-// var citySearch = $("#searcedCity")
-// var apiUrl = `api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}`;
-// var apiKey = "39d310963c56645dbc7002332b76e141";
-// var citySearch = $("#searcedCity").val().trim();
-// var apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}`;
-
-// console.log(apiUrl);
-
-// $.ajax({
-//     url: "http://api.openweathermap.org/data/2.5/weather?q=London&appid=39d310963c56645dbc7002332b76e141",
-//     url: apiUrl,
-//     method: "GET",
-//     }).then(function (response) {
-//         console.log(response.main.temp);
-//     });
-// });
+        // console.log(date);
+        // console.log(temp);
+        // console.log(maxTemp);
+        // console.log(minTemp);
+        // console.log(humidity);   
+        // console.log(windSpeed);
