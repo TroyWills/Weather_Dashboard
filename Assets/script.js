@@ -1,39 +1,79 @@
 // On click event for user hitting "search" button
-$("#run-search").on("click", function (event) {
-    event.preventDefault();
+ $("#run-search").on("click", function (event) {
+     event.preventDefault();
 
-// Local Storage from user input 
-var citySearch = $("#searcedCity").val().trim();
+ // var weatherData = JSON.parse(localStorage.getItem("weatherData")) || [];
 
-// Variables to produce URL for AJAX call 
-var apiKey = "39d310963c56645dbc7002332b76e141";
-var apiForecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${citySearch}&cnt=5&appid=${apiKey}`
 
-// Storing response from AJAX call into local storage
-var response = JSON.stringify();
+ // Local Storage from user input 
+ var citySearch = $("#searcedCity").val().trim();
 
-$.ajax({
+ // Variables to produce URL for AJAX call 
+ var apiKey = "39d310963c56645dbc7002332b76e141";
+ var apiForecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${citySearch}&cnt=5&appid=${apiKey}`
+ var apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}`;
+
+
+ // Storing response from AJAX call into local storage
+ // var response = JSON.stringify();
+
+ console.log(apiForecastUrl);
+
+ $.ajax({
     url: apiForecastUrl,
     method: "GET",
-    dataType: "jsonp",
+    dataType: "json"
     }).then(function (response) {
-        for (let i = 0; i < response.length; i++) {
-            var weatherData = response[i];
-            console.log(weatherData);
+    var weatherData = response.list;
+    // console.log(weatherData);
+        // console.log(date);
+    for (let i = 0; i < weatherData.length; i++) {
+
+        // return date from ajax call  
+        var date = weatherData[0].dt;
+        console.log(date);      
+
+        // return temperature from ajax call 
+        var temp = weatherData[0].main.temp;
+        console.log(temp);
+
+        // return max temp from ajax call 
+        var maxTemp = weatherData[0].main.temp_max;
+        console.log(maxTemp);
+
+        // return low temp from ajax call 
+        var minTemp = weatherData[0].main.temp_min;
+        console.log(minTemp);
+
+        // return humidity from ajax call 
+        var humidity = weatherData[0].main.humidity;
+        console.log(humidity);
+
+        // return wind speed from ajax call
+        var windSpeed = weatherData[0].wind.speed;
+        console.log(windSpeed);
+
         }
     });
 });
 
 
+    
 
-// Icon representation of weather conditions (is this in the AJAX response?)
-// The temperature 
-// The humidity 
-// Wind speedz
-// UV Index
+// var apiKey = "39d310963c56645dbc7002332b76e141";
+// var citySearch = $("#searcedCity")
+// var apiUrl = `api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}`;
+// var apiKey = "39d310963c56645dbc7002332b76e141";
+// var citySearch = $("#searcedCity").val().trim();
+// var apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}`;
 
-// console.log((response.main.temp − 273.15) × 9/5 + 32 = 26.33)
-// 270 = kelvin temp 
+// console.log(apiUrl);
 
-
-// (270K − 273.15) × 9/5 + 32 = 26.33
+// $.ajax({
+//     url: "http://api.openweathermap.org/data/2.5/weather?q=London&appid=39d310963c56645dbc7002332b76e141",
+//     url: apiUrl,
+//     method: "GET",
+//     }).then(function (response) {
+//         console.log(response.main.temp);
+//     });
+// });
