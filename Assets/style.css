@@ -17,7 +17,6 @@ td, th, table {
 .fiveday {
     line-height: .5;
     padding: 5px;
-    position: absolute;
     font-size: .75rem;
     display: inline-block;
     position: left;
