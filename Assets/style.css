@@ -15,7 +15,9 @@ td, th, table {
     }
 
 .fiveday {
-    border: 1px solid black;
+    line-height: .5;
+    padding: 5px;
+    font-size: .75rem;
 }
 
 
