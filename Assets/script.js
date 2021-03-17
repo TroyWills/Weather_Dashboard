@@ -7,8 +7,10 @@
 
  // Variables to produce URL for AJAX call 
  var apiKey = "39d310963c56645dbc7002332b76e141";
- var apiForecastUrl = `api.openweathermap.org/data/2.5/forecast?q=${citySearch}&cnt=5&appid=${apiKey}`;
-console.log(apiForecastUrl);
+ var apiForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${citySearch}&cnt=5&appid=${apiKey}`;
+
+//  api.openweathermap.org/data/2.5/forecast?q=${citySearch}&cnt=5&appid=${apiKey}
+
  $.ajax({
     url: apiForecastUrl,
     method: "GET",
